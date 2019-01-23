@@ -4,3 +4,11 @@ body{
     background-repeat: no-repeat; 
     background-size: cover; 
 }
+
+form{
+    background-color: #fff;
+    padding-top: 7px;
+    padding-right: 2px;
+    padding-bottom: 1px;
+    padding-left: 2px;
+}
