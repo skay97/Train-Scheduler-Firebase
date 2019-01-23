@@ -1,14 +1,23 @@
 body{
-    background-image: url("https://c1.staticflickr.com/5/4564/38621310851_c1172b9da6_b.jpg");
+    background-image: url("https://c1.staticflickr.com/2/1727/42454816151_94b66f3130_b.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover; 
 }
-
+.jumbotron{
+    background-color: #1c1e22;
+    color: #fff;
+}
 form{
-    background-color: #fff;
+    background-color: #3e444c;
+    color:#fff;
     padding-top: 7px;
     padding-right: 2px;
     padding-bottom: 1px;
     padding-left: 2px;
+}
+
+.table-header{
+    background-color: #3e444c;
+    color:#c8c8c8;
 }
