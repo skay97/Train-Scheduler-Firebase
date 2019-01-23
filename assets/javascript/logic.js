@@ -22,6 +22,27 @@ $(document).ready(function () {
         var frequency = $("#frequency").val()
         var trainTime = $("#trainTime").val();
 
+        var newTrain = {
+            name : trainName,
+            destination: destination,
+            frequeny: frequency,
+            time: trainTime
+        }
+
+        database.ref().push(newTrain)
+
+        $("#trainName").val(""); 
+        $("#destination").val("");
+        $("#frequency").val("")
+        $("#trainTime").val("");
+    })
+
+    database.ref().on("child_added", function(childsnapshot){
+        var trainName = childsnapshot.val().name;
+        var destination = childsnapshot.val().destination;
+        var frequency = childsnapshot.val().frequeny;
+        var trainTime = childsnapshot.val().time;
+        
         $("tbody").append(
             `<tr>
             <td>${trainName}</td>
