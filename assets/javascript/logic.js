@@ -38,10 +38,13 @@ $(document).ready(function () {
     })
 
     database.ref().on("child_added", function(childsnapshot){
+        console.log(childsnapshot.val());
         var trainName = childsnapshot.val().name;
         var destination = childsnapshot.val().destination;
         var frequency = childsnapshot.val().frequeny;
         var trainTime = childsnapshot.val().time;
+
+        
         
         $("tbody").append(
             `<tr>
