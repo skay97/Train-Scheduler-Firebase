@@ -21,3 +21,12 @@ form{
     background-color: #3e444c;
     color:#c8c8c8;
 }
+
+.material-icons{
+    position: relative;
+    top: 5px;
+}
+.fa, .fas, .far, .fa-clock{
+    position: relative;
+    left: 5px;
+}
