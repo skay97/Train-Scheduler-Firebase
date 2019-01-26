@@ -30,3 +30,7 @@ form{
     position: relative;
     left: 5px;
 }
+
+.time{
+    font-size:20px;
+}

@@ -1,5 +1,11 @@
 $(document).ready(function () {
-
+    
+    function currentTime() {
+        var current = moment().format('LT');
+        $("#time").html(current);
+        setTimeout(currentTime, 1000);
+      };
+      currentTime();
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyAJrUhFJXc0D4dGgs8Bx2tmdQWso8qxfGI",
@@ -48,7 +54,7 @@ $(document).ready(function () {
         console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
         var trainTimeConverted = moment(trainTime, "hh:mm").subtract(1, "years");
-        console.log(trainTimeConverted);
+        console.log(trainTimeConverted.toISOString());
 
         var diffTime = moment().diff(moment(trainTimeConverted), "minutes");
         console.log("DIFFERENCE IN TIME: " + diffTime);
