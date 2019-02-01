@@ -44,26 +44,28 @@ $(document).ready(function () {
     })
 
     database.ref().on("child_added", function (childsnapshot) {
-        console.log(childsnapshot.val());
+        // console.log(childsnapshot.val());
+        
         var trainName = childsnapshot.val().name;
         var destination = childsnapshot.val().destination;
         var frequency = childsnapshot.val().frequeny;
         var trainTime = childsnapshot.val().time;
 
         var currentTime = moment();
-        console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+        // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
         var trainTimeConverted = moment(trainTime, "hh:mm").subtract(1, "years");
-        console.log(trainTimeConverted.toISOString());
+        // console.log(trainTimeConverted.toISOString());
 
         var diffTime = moment().diff(moment(trainTimeConverted), "minutes");
-        console.log("DIFFERENCE IN TIME: " + diffTime);
+        // console.log("DIFFERENCE IN TIME: " + diffTime);
 
         var tRemainder = diffTime % frequency;
-        console.log(tRemainder);
+        // console.log(tRemainder);
 
         var minutesAway = frequency - tRemainder;
-        console.log("MINUTES TILL TRAIN: " + minutesAway);
+        // console.log("MINUTES TILL TRAIN: " + minutesAway);
+
 
 
         $("tbody").append(
@@ -75,4 +77,5 @@ $(document).ready(function () {
             <td>${minutesAway}</td>
             </tr>`)
     })
+    // function to reload/update the page every second from firebase
 });
